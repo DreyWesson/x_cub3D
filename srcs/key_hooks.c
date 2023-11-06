@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 16:10:41 by valmpani          #+#    #+#             */
-/*   Updated: 2023/11/06 21:00:20 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:25:17 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,7 @@ int	move_view(int keycode, t_vars *vars)
 {
 	if (keycode == KEY_ESCAPE)
 		ft_close(vars);
-	if (keycode == KEY_9)
-	{
-		if (vars->hand_item == 0)
-			vars->hand_item = 1;
-		else
-			vars->hand_item = 0;
-		ft_render(vars);
-	}
+
 	if (keycode == KEY_W || keycode == KEY_S
 		|| keycode == KEY_A || keycode == KEY_D)
 	{
@@ -94,7 +87,6 @@ int	move_view(int keycode, t_vars *vars)
 	}
 	if (keycode == ARROW_LEFT || keycode == ARROW_RIGHT)
 	{
-
 		vars->rot_flag = 1;
 		player_rotate(keycode, vars);
 	}

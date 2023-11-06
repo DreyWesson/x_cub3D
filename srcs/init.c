@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 14:38:46 by valmpani          #+#    #+#             */
-/*   Updated: 2023/11/06 20:52:57 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:24:50 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,6 @@ int	init_tex_and_scr_buf(t_vars *vars)
 	if (init_screen_buffer(vars))
 		return (1);
 	if (init_wall_textures(vars))
-		return (1);
-	if (init_floor_ceil_textures(vars))
-		return (1);
-	if (init_hand_item_textures(vars))
 		return (1);
 	return (0);
 }

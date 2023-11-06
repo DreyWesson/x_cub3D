@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamesser <mamesser@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: doduwole <doduwole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:54:59 by mamesser          #+#    #+#             */
-/*   Updated: 2023/10/06 19:54:56 by mamesser         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:27:03 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ int	cast_rays(t_vars *vars)
 		run_dda(vars);
 		calc_line_height(vars);
 		put_text_on_buf_scr(vars);
-		if (vars->bonus)
-			put_floor_ceil(vars);
 		vars->screen_x++;
 	}
 	return (0);
@@ -102,20 +100,9 @@ void	draw_floor_ceiling(t_vars *vars)
 
 int	ft_render(t_vars *vars)
 {
-	t_circle	mp;
-
-	mp.offset = 0.0;
-	if (!vars->bonus)
-		draw_floor_ceiling(vars);
+	draw_floor_ceiling(vars);
 	vars->screen_x = 0;
 	cast_rays(vars);
-	if (!vars->zoom)
-	{
-		add_hand_item(vars);
-		mini_map(vars);
-	}
-	else
-		draw_zoom_circle(vars, mp, 0, 0);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->scr_buf->img, 0, 0);
 	vars->frame++;
 	return (0);

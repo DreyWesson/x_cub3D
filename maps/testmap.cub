@@ -1,6 +1,6 @@
 
-F 223, 224, 219
-C 0 0 0
+F 61, 178, 65
+C 223 229 36
 
 SO ./textures/so_tex.xpm
 WE ./textures/we_tex.xpm

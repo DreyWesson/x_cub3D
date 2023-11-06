@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamesser <mamesser@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: doduwole <doduwole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:09:45 by mamesser          #+#    #+#             */
-/*   Updated: 2023/10/07 11:05:47 by mamesser         ###   ########.fr       */
+/*   Updated: 2023/11/06 21:27:23 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ int	ft_close(t_vars *vars)
 
 void	run_hooks(t_vars *vars)
 {
-	mlx_mouse_hook(vars->win, &mouse_click, vars);
-	mlx_hook(vars->win, 6, 1L << 6, mouse_move, vars);
 	mlx_hook(vars->win, 12, 1L << 15, ft_render, vars);
 	mlx_hook(vars->win, 17, 0L, ft_close, vars);
 	mlx_hook(vars->win, 02, 1L << 0, move_view, vars);
 	mlx_loop(vars->mlx);
 }
+
 
 int	main(int argc, char **argv)
 {
