@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:54:59 by mamesser          #+#    #+#             */
-/*   Updated: 2023/11/06 21:27:03 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/11/06 23:49:11 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	cast_rays(t_vars *vars)
 	while (vars->screen_x < vars->screen_width)
 	{
 		init_raycast(vars);
+		printf("%f %d %f %d\n", vars->ray->deltadist_x, vars->ray->step_x, vars->ray->sidedist_x, vars->ray->map_x);
+		exit(1);
 		run_dda(vars);
 		calc_line_height(vars);
 		put_text_on_buf_scr(vars);
